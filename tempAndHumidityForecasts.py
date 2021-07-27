@@ -10,6 +10,7 @@ import pandas as pd
 import os
 import math
 from keras.callbacks import ModelCheckpoint
+import keras.backend as k
 
 
 
@@ -90,19 +91,22 @@ train_output_sequence = train_output_sequence[0: train_size]
 
 # define model
 model = tf.keras.models.Sequential()
-# create callback to save model weights each time its trained (for deployment)
-cp_callback = ModelCheckpoint(filepath='tempForecastModel.ckpt',
-                                                save_best_only=True,
-                                                 verbose=1)
 model.add(tf.keras.layers.LSTM(64, input_shape=(train_input_sequence.shape[1],train_input_sequence.shape[2]), return_sequences=False))
 model.add(tf.keras.layers.Dense(64, activation='relu'))
 model.add(tf.keras.layers.Dense(train_output_sequence.shape[1]))
 model.compile(loss='mse', optimizer='adam')
 num_epochs = 100
 history = model.fit(train_input_sequence, train_output_sequence, epochs=num_epochs,batch_size=128,
-                    validation_data=(validation_input_sequence, validation_output_sequence), verbose=1, callbacks=[cp_callback])
+                    validation_data=(validation_input_sequence, validation_output_sequence), verbose=1)
 
 
+# Convert the model
+converter = tf.lite.TFLiteConverter.from_keras_model(model) # path to the SavedModel directory
+tflite_model = converter.convert()
+
+# Save the model.
+with open('model.tflite', 'wb') as f:
+  f.write(tflite_model)
 
 prediction = model.predict(test_input_sequence)
 prediction = scaler2.inverse_transform(prediction)
