@@ -5,7 +5,7 @@ from sklearn.preprocessing import MinMaxScaler
 import matplotlib.pyplot as plt
 import random
 from datetime import datetime
-import pickle
+from pickle import dump
 import pandas as pd
 import os
 import math
@@ -69,11 +69,11 @@ for i in range(train_input_sequence.shape[2]):
     scaler1 = scaler1.fit(train_input_sequence[:, :, i])
     train_input_sequence[:, :, i] = scaler1.transform(train_input_sequence[:, :, i])
     test_input_sequence[:, :, i] = scaler1.transform(test_input_sequence[:, :, i])
-    np.save('temp_forecast_scaler1' + str(i) + '.npy', scaler1)
+    dump(scaler1, open('temp_forecast_scaler1'+str(i)+'.pkl','wb'))
 scaler2 = MinMaxScaler(feature_range=(0, 1))
 scaler2 = scaler2.fit(train_output_sequence)
 train_output_sequence = scaler2.transform(train_output_sequence)
-np.save('temp_forecast_scaler2.npy', scaler2)
+dump(scaler2, open('temp_forecast_scaler2.pkl', 'wb'))
 
 
 # shuffle and split training into training and validation
