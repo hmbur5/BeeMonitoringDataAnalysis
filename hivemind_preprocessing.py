@@ -3,7 +3,7 @@ import pandas as pd
 reading = pd.read_csv('hivemind_data/reading.csv')
 event = pd.read_csv('hivemind_data/event.csv')
 event['event_id'] = event['id']
-event = event[['event_id', 'location']]
+event = event[['event_id', 'location', 'weather_data']]
 event_records = pd.merge(reading,event, on='event_id', how='outer', validate = 'many_to_one')
 # only using events that have location data
 event_records = event_records.loc[event_records['location'].notnull()]
