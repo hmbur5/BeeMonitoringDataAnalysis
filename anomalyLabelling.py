@@ -25,7 +25,6 @@ for filename in os.listdir(directory):
     else:
         continue
 
-
 # creating input list that contain 4 consecutive data points of the internal and external temperature
 # and output list being the subsequent internal temperature
 # to avoid using future data in training and past data in testing (which could mean in training it sees the data we're
@@ -139,6 +138,7 @@ test_hive_all_data = []
 
 for file in files:
     data = pd.read_csv(directory+file)
+    data['activity_prediction_error'] = [None]*(data.shape[0])
     if 'tempC' not in data.columns:
         continue
     data['time'] = pd.to_datetime(data['time'])
@@ -170,15 +170,14 @@ for file in files:
         error = prediction[0] - activity_output
         error = np.abs(error[0])
 
+        data.at[i+steps+j,'activity_prediction_error'] = error
+
 
         # add sample to training/testing depending on whether it is an anomaly
         if i < 0.7 * data.shape[0] and error<max_error:
             train_input_sequence.append(temp_input)
             train_output_sequence.append(temp_output)
         else:
-            # skip midnight reading in test
-            if input[-1][0] == 0:
-                continue
             if error<max_error:
                 normal_test_input_sequence.append(temp_input)
                 normal_test_output_sequence.append(temp_output)
@@ -186,6 +185,7 @@ for file in files:
                 anomaly_test_input_sequence.append(temp_input)
                 anomaly_test_output_sequence.append(temp_output)
             test_hive_all_data.append([entire_sequence])
+    data.to_csv(directory+'labelled/'+file)
 
 
 train_input_sequence = np.array(train_input_sequence)
@@ -258,6 +258,7 @@ anomaly_error = np.abs(anomaly_prediction - anomaly_observation)
 anomaly_error = list(v[0] for v in anomaly_error)
 
 error_thresh = max([max(anomaly_error), max(normal_error)])
+print(error_thresh)
 max_diff = 0
 errors = []
 youdens = []
@@ -274,7 +275,7 @@ while error_thresh>0:
     if youden > max_diff:
         max_diff = youden
         best_thresh = error_thresh
-    error_thresh-=0.01
+    error_thresh-=0.1
 
 print(best_thresh)
 true_pos = sum(anomaly_error>best_thresh)
@@ -286,6 +287,7 @@ print(len(normal_error))
 print(true_pos/len(anomaly_error))
 print(false_pos/len(normal_error))
 youden = true_pos/len(anomaly_error) - false_pos/len(normal_error)
+
 
 
 

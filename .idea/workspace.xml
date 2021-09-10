@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="215b1236-db4b-49a5-bc08-f546220c1700" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/anomalyLabelling.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/arima_anomaly.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/labelledForecasting.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/customerGrouping.py" afterPath="$PROJECT_DIR$/customerGrouping.py" />
-      <change beforePath="$PROJECT_DIR$/hivemind_preprocessing.py" afterPath="$PROJECT_DIR$/hivemind_preprocessing.py" />
+      <change beforePath="$PROJECT_DIR$/anomalyLabelling.py" afterPath="$PROJECT_DIR$/anomalyLabelling.py" />
       <change beforePath="$PROJECT_DIR$/model.tflite" afterPath="$PROJECT_DIR$/model.tflite" />
       <change beforePath="$PROJECT_DIR$/tempAndHumidityForecasts.py" afterPath="$PROJECT_DIR$/tempAndHumidityForecasts.py" />
     </list>
@@ -52,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tempAndHumidityForecasts.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tempAndHumidityForecasts.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tempAndHumidityForecasts.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="74">
-              <caret line="300" column="16" lean-forward="true" selection-start-line="300" selection-start-column="16" selection-end-line="300" selection-end-column="16" />
+            <state relative-caret-position="975">
+              <caret line="69" column="55" lean-forward="false" selection-start-line="69" selection-start-column="55" selection-end-line="69" selection-end-column="55" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -67,23 +67,35 @@
       <file leaf-file-name="anomalyLabelling.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/anomalyLabelling.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3870">
-              <caret line="262" column="12" lean-forward="false" selection-start-line="262" selection-start-column="11" selection-end-line="262" selection-end-column="12" />
+            <state relative-caret-position="-1360">
+              <caret line="27" column="29" lean-forward="false" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <marker date="1629758899845" expanded="true" signature="383:12094" ph="..." />
+                <marker date="1631240655592" expanded="true" signature="383:12181" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="weatherComparison.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/weight/weatherComparison.py">
+      <file leaf-file-name="labelledForecasting.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/labelledForecasting.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+            <state relative-caret-position="251">
+              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
-                <element signature="e#0#52#0" expanded="true" />
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="arima_anomaly.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/arima_anomaly.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-855">
+              <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,36 +112,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>csv</find>
-      <find>merg</find>
-      <find>merge</find>
-      <find>temp</find>
-      <find>event_records</find>
-      <find>weights</find>
-      <find>epoc</find>
-      <find>datetime</find>
-      <find>time</find>
-      <find>timeouter</find>
-      <find>r2_score</find>
-      <find>output_min</find>
-      <find>cloud</find>
-      <find>test_hive_all</find>
-      <find>tempc</find>
-      <find>test_hive_all_data</find>
-      <find>0.257</find>
-      <find>scalers</find>
-      <find>hi</find>
-      <find>hello</find>
-      <find>print</find>
-      <find>v[0]</find>
-      <find>epo</find>
-      <find>0.8</find>
-      <find>test</find>
-      <find>100/100</find>
-      <find>epoch</find>
       <find>pickle</find>
-      <find>prediction</find>
       <find>exit</find>
+      <find>to_csv</find>
+      <find>original_input</find>
+      <find>variable</find>
+      <find>scale</find>
+      <find>scal</find>
+      <find>observation</find>
+      <find>normal_obser</find>
+      <find>np.array</find>
+      <find>test_hive_all</find>
+      <find>input</find>
+      <find>0.7</find>
+      <find>output</find>
+      <find>prediction = np.</find>
+      <find>test_input</find>
+      <find>epoch</find>
+      <find>original_test</find>
+      <find>test_output</find>
+      <find>prediction</find>
+      <find>model</find>
+      <find>'model'</find>
+      <find>model.pre</find>
+      <find>0.1</find>
+      <find>0.01</find>
+      <find>csv</find>
+      <find>max_error</find>
+      <find>thresh</find>
+      <find>print</find>
+      <find>epoc</find>
     </findStrings>
     <replaceStrings>
       <replace>site</replace>
@@ -147,15 +159,18 @@
         <option value="$PROJECT_DIR$/weight/demoWeightProcessing.py" />
         <option value="$PROJECT_DIR$/hivemind_preprocessing.py" />
         <option value="$PROJECT_DIR$/customerGrouping.py" />
-        <option value="$PROJECT_DIR$/anomalyLabelling.py" />
         <option value="$PROJECT_DIR$/tempAndHumidityForecasts.py" />
+        <option value="$PROJECT_DIR$/arima_anomaly.py" />
+        <option value="$PROJECT_DIR$/anomalyLabelling.py" />
+        <option value="$PROJECT_DIR$/labelledForecasting.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="793" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="11" />
+    <option name="y" value="24" />
+    <option name="width" value="1429" />
+    <option name="height" value="790" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -172,6 +187,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -188,8 +205,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -208,7 +223,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.tempAndHumidityForecasts">
+  <component name="RunManager" selected="Python.labelledForecasting">
     <configuration name="anomalyLabelling" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -222,6 +237,24 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="BeeMonitoringDataAnalysis" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/anomalyLabelling.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="arima_anomaly" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BeeMonitoringDataAnalysis" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/arima_anomaly.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -245,25 +278,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="demoWeightProcessing" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/weight" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="BeeMonitoringDataAnalysis" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/weight/demoWeightProcessing.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="hivemind_preprocessing" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="labelledForecasting" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -275,7 +290,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="BeeMonitoringDataAnalysis" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hivemind_preprocessing.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/labelledForecasting.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -300,19 +315,19 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.demoWeightProcessing" />
-      <item index="1" class="java.lang.String" itemvalue="Python.hivemind_preprocessing" />
-      <item index="2" class="java.lang.String" itemvalue="Python.customerGrouping" />
-      <item index="3" class="java.lang.String" itemvalue="Python.tempAndHumidityForecasts" />
-      <item index="4" class="java.lang.String" itemvalue="Python.anomalyLabelling" />
+      <item index="0" class="java.lang.String" itemvalue="Python.customerGrouping" />
+      <item index="1" class="java.lang.String" itemvalue="Python.tempAndHumidityForecasts" />
+      <item index="2" class="java.lang.String" itemvalue="Python.anomalyLabelling" />
+      <item index="3" class="java.lang.String" itemvalue="Python.arima_anomaly" />
+      <item index="4" class="java.lang.String" itemvalue="Python.labelledForecasting" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.tempAndHumidityForecasts" />
-        <item index="1" class="java.lang.String" itemvalue="Python.anomalyLabelling" />
-        <item index="2" class="java.lang.String" itemvalue="Python.customerGrouping" />
-        <item index="3" class="java.lang.String" itemvalue="Python.hivemind_preprocessing" />
-        <item index="4" class="java.lang.String" itemvalue="Python.demoWeightProcessing" />
+        <item index="0" class="java.lang.String" itemvalue="Python.labelledForecasting" />
+        <item index="1" class="java.lang.String" itemvalue="Python.arima_anomaly" />
+        <item index="2" class="java.lang.String" itemvalue="Python.anomalyLabelling" />
+        <item index="3" class="java.lang.String" itemvalue="Python.tempAndHumidityForecasts" />
+        <item index="4" class="java.lang.String" itemvalue="Python.customerGrouping" />
       </list>
     </recent_temporary>
   </component>
@@ -333,13 +348,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="793" extended-state="6" />
-    <editor active="true" />
+    <frame x="11" y="24" width="1429" height="790" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.062015504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.061789773" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28592592" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2872024" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -360,32 +374,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/weight/weatherComparison.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/anomalyLabelling.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-            <marker date="1629758899845" expanded="true" signature="383:12094" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/weight/demoWeightProcessing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -430,7 +423,7 @@
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <marker date="1629758899845" expanded="true" signature="383:12094" ph="..." />
+            <marker date="1631240655592" expanded="true" signature="383:12181" ph="..." />
           </folding>
         </state>
       </provider>
@@ -439,9 +432,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -479,9 +469,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -517,9 +504,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="36" column="29" lean-forward="false" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -565,9 +549,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="36" column="29" lean-forward="false" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -613,9 +594,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="36" column="29" lean-forward="false" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -651,9 +629,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="36" column="29" lean-forward="false" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -671,9 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="36" column="29" lean-forward="false" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -691,9 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="36" column="29" lean-forward="false" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -711,9 +680,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="36" column="29" lean-forward="false" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -741,9 +707,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -771,19 +734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/weight/demoWeightProcessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="68" column="21" lean-forward="false" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -791,24 +741,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="5477" column="0" lean-forward="false" selection-start-line="5477" selection-start-column="0" selection-end-line="5477" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/weight/weatherComparison.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hivemind_preprocessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -826,13 +758,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/anomalyLabelling.py">
+    <entry file="file://$PROJECT_DIR$/weight/weatherComparison.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3870">
-          <caret line="262" column="12" lean-forward="false" selection-start-line="262" selection-start-column="11" selection-end-line="262" selection-end-column="12" />
+        <state relative-caret-position="166">
+          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hivemind_preprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weight/demoWeightProcessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="68" column="21" lean-forward="false" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tempAndHumidityForecasts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="69" column="55" lean-forward="false" selection-start-line="69" selection-start-column="55" selection-end-line="69" selection-end-column="55" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <marker date="1629758899845" expanded="true" signature="383:12094" ph="..." />
           </folding>
         </state>
       </provider>
@@ -847,10 +803,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tempAndHumidityForecasts.py">
+    <entry file="file://$PROJECT_DIR$/anomalyLabelling.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="300" column="16" lean-forward="true" selection-start-line="300" selection-start-column="16" selection-end-line="300" selection-end-column="16" />
+        <state relative-caret-position="-1360">
+          <caret line="27" column="29" lean-forward="false" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1631240655592" expanded="true" signature="383:12181" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/arima_anomaly.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-855">
+          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labelledForecasting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>

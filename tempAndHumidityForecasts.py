@@ -54,7 +54,7 @@ test_output_sequence = []
 test_hive_all_data = []
 
 steps=4
-future_steps = 2
+future_steps = 1
 for file in files:
     data = pd.read_csv(directory+file)
     if 'tempC' not in data.columns:
@@ -69,7 +69,9 @@ for file in files:
                 #weatherList = []
                 input.append([data['time'][i + j].hour] + weatherList + [data[variable].values[i + j]])
             else:
-                input.append([data['time'][i+j].hour,data[variable].values[i+j]])
+                weather = data.loc[:,['tempC']]
+                weatherList = weather.loc[i+j+1].tolist()
+                input.append([data['time'][i+j].hour]+ weatherList +[data[variable].values[i+j]])
             entire_sequence = [list(data[variable].values), i]
         output = []
         for j in range(future_steps):
@@ -152,9 +154,9 @@ prediction = prediction*(output_max-output_min)+output_min
 observation = test_output_sequence
 
 
-#print(np.mean(np.abs(prediction-observation)))
-#print(np.mean(np.abs(observation-original_input[:,-1,-1])))
-#print(np.mean(np.abs(observation-original_input[:,-4,-1])))
+print(np.mean(np.abs(prediction-observation)))
+print(np.mean(np.abs(observation-original_input[:,-1,-1])))
+print(np.mean(np.abs(observation-original_input[:,-4,-1])))
 
 #print('r2')
 #print(r2_score(observation, prediction))
