@@ -5,6 +5,7 @@ import pickle
 from datetime import timedelta
 from socket import *
 import time
+import urllib
 
 # each hive from hivemind data has a different site id?
 
@@ -48,12 +49,13 @@ for variable in variables:
 with open('siteDevices.pickle', 'wb') as handle:
     pickle.dump(siteDevices, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-
+'''
 with open('siteDevices.pickle', 'rb') as handle:
     siteDevices = pickle.load(handle)
 
 print(siteDevices[34.0])
 
+'''
 climateRecords = {}
 for variable in variables:
     climateRecords[variable] = {}
@@ -64,7 +66,7 @@ for site_number in siteDevices.keys():
         hum = siteDevices[site_number]['humidity']
         temp = siteDevices[site_number]['temp']
         act = siteDevices[site_number]['activity']
-        intersection = list(set(temp) & set(act))
+        intersection = list(set(temp) & set(act) & set(hum))
         if len(intersection)>0:
             site_list.append(site_number)
             #for variable in variables:
@@ -77,8 +79,10 @@ print(site_list)
 
 
 
+
 siteRecords = pd.DataFrame()
 site_list = [34.0, 68.0, 429.0, 682.0, 1021.0, 1046.0, 1047.0, 1048.0, 1439.0, 1443.0, 1677.0, 2604.0, 2754.0, 4483.0, 4484.0, 4487.0, 4488.0, 4491.0, 4493.0, 4494.0, 4495.0, 4496.0, 4869.0, 4873.0, 4888.0, 4890.0, 4906.0, 4907.0, 4908.0, 5018.0, 5092.0, 5093.0, 5095.0, 5147.0, 5167.0, 5168.0, 5170.0, 5179.0, 5348.0, 5362.0, 5432.0, 5433.0, 5435.0, 5491.0, 5561.0, 5563.0, 5606.0, 5607.0, 5608.0, 5617.0, 5619.0, 5620.0, 5623.0, 5624.0, 5625.0, 5628.0, 5637.0, 5659.0, 5660.0, 5662.0, 5664.0, 5665.0, 5666.0, 5667.0, 5668.0, 5669.0, 5670.0, 5675.0, 5676.0, 5677.0, 5684.0, 5688.0, 5689.0, 5895.0, 5898.0, 5924.0, 5925.0, 5926.0, 6124.0, 6125.0, 6463.0, 6645.0, 6786.0, 6787.0, 6788.0, 6790.0]
+site_list = site_list[50:]
 event_record = event_record[event_record['site_id'].notna()]
 siteRecords = event_record[event_record['site_id'].isin(site_list)]
 
@@ -86,8 +90,9 @@ from WorldWeatherPy import HistoricalLocationWeather
 keys = ['1dcd3b829f5c4fa9b6514402211308']
 api_key = keys[0]
 
-variables = ['activity', 'temp']
+variables = ['activity', 'temp', 'humidity']
 for site_number in site_list:
+    print(time.time())
     site_df = siteRecords.loc[(siteRecords['site_id'] ==site_number)]
     devices = site_df['device_id'].unique()
     #max = 0
@@ -109,26 +114,39 @@ for site_number in site_list:
             # interpolate data so time steps are even
             upsampled = df.resample('6H').mean()
             interpolated = upsampled.interpolate(method='linear', limit=2)
-            interpolated = interpolated.rename(columns={"value": variable})
+            if variable=='humidity':
+                interpolated = interpolated.rename(columns={"value": 'internal_humidity'})
+            else:
+                interpolated = interpolated.rename(columns={"value": variable})
 
             if variable == variables[0]:
                 all_measures = interpolated
 
-                # get current weather conditions at location and time - need to deal with changing locations
-                if coordinates is not None and coordinates!='0.0,0.0':
-                    first_date = min(df.index).strftime('%Y-%m-%d')
-                    end_date = (max(df.index) + timedelta(days=1)).strftime('%Y-%m-%d')
-                    print(coordinates)
-                    weather=None
-                    while weather is None:
-                        try:
-                            weather = HistoricalLocationWeather(api_key, coordinates, first_date, end_date,
-                                                        1).retrieve_hist_data()
-                        except timeout:
-                            time.sleep(10)
-                    weather['time'] = pd.to_datetime(weather.index, utc=True)
-                    weather = weather[['time', 'tempC', 'uvIndex', 'cloudcover', 'visibility', 'humidity', 'windspeedKmph']]
-                    all_measures = pd.merge(all_measures, weather, on='time', how='inner', validate='one_to_many')
+                while True:
+                    try:
+                        # get current weather conditions at location and time - need to deal with changing locations
+                        if coordinates is not None and coordinates!='0.0,0.0':
+                            first_date = min(df.index).strftime('%Y-%m-%d')
+                            end_date = (max(df.index) + timedelta(days=1)).strftime('%Y-%m-%d')
+                            print(coordinates)
+                            weather=None
+                            while weather is None:
+                                try:
+                                    weather = HistoricalLocationWeather(api_key, coordinates, first_date, end_date,
+                                                                1).retrieve_hist_data()
+                                except timeout:
+                                    time.sleep(10)
+                            weather['time'] = pd.to_datetime(weather.index, utc=True)
+                            weather = weather[['time', 'tempC', 'uvIndex', 'cloudcover', 'visibility', 'humidity', 'windspeedKmph']]
+                            all_measures = pd.merge(all_measures, weather, on='time', how='inner', validate='one_to_many')
+                    except urllib.error.HTTPError:
+                        print('error')
+                        time.sleep(120)
+                    else:
+                        break
+
+
+
 
             else:
                 all_measures = pd.merge(all_measures, interpolated, on = 'time', how = 'outer', validate = 'one_to_one')
